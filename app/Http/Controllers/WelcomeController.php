@@ -14,5 +14,18 @@ class WelcomeController extends Controller
 
         return 'hi';
     }
+
+    public function login()
+    {
+       return view('login');
+    }
+
+    public function loginValidate()
+    {
+
+
+    }
+
+
     
 }
