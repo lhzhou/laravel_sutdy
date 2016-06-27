@@ -11,11 +11,21 @@ use App\Http\Controllers\Controller;
 class AccountController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        $condition = [];
+        if ($request->input('id'))
+            $condition['id'] = $request->input('id');
+        if ($request->input('gameID'))
+            $condition['id'] = $request->input('gameID');
 
-        return AccountModel::orderBy('created_at', 'desc')->paginate('20');
-//        return 'accountList';
+
+
+        $data['results'] = AccountModel::getAll($condition);
+
+
+
+        return view('account.account_list' , $data);
 
     }
 
