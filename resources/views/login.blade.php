@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.layout')
 
 
 @section('content')
@@ -11,7 +11,9 @@
                     <h3 class="panel-title">Please sign in</h3>
                 </div>
                 <div class="panel-body">
-                    <form accept-charset="UTF-8" role="form">
+                    <form accept-charset="UTF-8" role="form" action="{{url('login')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="email" type="text">
