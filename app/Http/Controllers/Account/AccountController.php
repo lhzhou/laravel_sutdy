@@ -13,14 +13,21 @@ class AccountController extends Controller
 
     public function index(Request $request)
     {
+
+
         $condition = [];
-        if ($request->input('id'))
-            $condition['id'] = $request->input('id');
-        if ($request->input('gameID'))
-            $condition['id'] = $request->input('gameID');
+
+        $condition['id'] = $request->input('id');
+        $condition['gameID'] = $request->input('gameID');
+        $condition['nickname'] = $request->input('nickname');
+        $condition['city'] = $request->input('city');
+        $condition['openID'] = $request->input('openID');
+        $condition['paternalID'] = $request->input('paternalID');
+        $condition['startDate'] = ($request->input('startDate'))? strtotime($request->input('startDate')):'';
+        $condition['endDate'] = ($request->input('endDate'))? strtotime($request->input('endDate')):'';
 
 
-
+        dd($condition);
         $data['results'] = AccountModel::getAll($condition);
 
 
