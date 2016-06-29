@@ -2,13 +2,20 @@
 
 namespace App\Models;
 
+use Faker\Provider\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class AccountModel extends Model
 {
     protected $table  = 'users';
 
+    protected $fillable = ['id','paternalID','openID', 'subscribe' , 'nickname' , 'sex' , 'language' , 'city' , 'province' , 'country' , 'headimgurl' , 'subscribe_time' , 'remark' ,'groupid'];
+
     protected $dateFormat = 'U';
+
+    protected $casts = ['id' => 'string'];
+
+
 
 
     public static function getAll(array $condition =[])
@@ -45,6 +52,11 @@ class AccountModel extends Model
 
         return $db;
 
+    }
+
+    public static function updateID($openId)
+    {
+       return self::where('openID' , $openId)->update(['id' => Uuid::uuid()]);
     }
 
 

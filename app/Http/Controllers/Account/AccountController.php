@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Account;
 
 use App\Models\AccountModel;
+use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 class AccountController extends Controller
 {
 
@@ -26,13 +26,14 @@ class AccountController extends Controller
         $condition['startDate'] = ($request->input('startDate'))? strtotime($request->input('startDate')):'';
         $condition['endDate'] = ($request->input('endDate'))? strtotime($request->input('endDate')):'';
 
-
         $data['results'] = AccountModel::getAll($condition);
-
 
 
         return view('account.account_list' , $data);
 
     }
+
+
+
 
 }

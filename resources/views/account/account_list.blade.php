@@ -100,7 +100,7 @@
         <tbody>
             @foreach($results AS $value )
             <tr>
-                <td>{{$value->id}}</td>
+                <td>{!!$value->id!!}</td>
                 <td>{{$value->openID}}</td>
                 <td>{{$value->nickname}}</td>
                 <td>{{$value->gameID}}</td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Wechat;
 
 use App\Models\AccountModel;
 use App\Models\ReviveQrCodeModel;
+use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -26,7 +27,7 @@ class QrcodeController extends Controller
         {
 
 
-            if (ReviveQrCodeModel::create(['user_id' => $value->id , 'url' => $this->getQrcode('RES_'.$value->id)])){
+            if (ReviveQrCodeModel::create(['id' => Uuid::uuid() , 'user_id' => $value->id , 'url' => $this->getQrcode('RES_'.$value->id)])){
                 echo $value->id."生成二维码成功<br />\n";;
             }else{
                 echo $value->id."生成二维码失败<br />\n";;
