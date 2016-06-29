@@ -18,8 +18,7 @@ Route::get('/login' , 'WelcomeController@login');
 Route::post('/login' , 'WelcomeController@loginValidate');
 
 Route::get('/out' , 'WelcomeController@out');
-//
-//Route::get('/loginSuccess' , 'WelcomeController@success');
+
 
 
 Route::group(['middleware' => 'auth'], function (){
@@ -28,6 +27,8 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/' , 'WelcomeController@index');
 
     Route::get('/account' , 'Account\\AccountController@index');
+
+    Route::get('/qrcode/generate' , 'Wechat\\QrcodeController@generate');
 
 
 });

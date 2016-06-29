@@ -43,19 +43,8 @@ class AccountModel extends Model
 
         $db = $db->paginate('50');
 
-//        $db = $db->toSql();
         return $db;
 
-        //        self::where();
-//        if (isset($condition['id']))
-//            self::where('id', $condition['id']);
-//        if (isset($condition['gameID']))
-//            self::where('gameID', $condition['gameID']);
-//        if (isset($condition['nickname']))
-//            self::where('nickname', 'like', '%'.$condition['nickname'].'%');
-//
-//        self::;
-//        return DB::paginate(50);
     }
 
 

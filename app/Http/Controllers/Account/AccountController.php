@@ -27,7 +27,6 @@ class AccountController extends Controller
         $condition['endDate'] = ($request->input('endDate'))? strtotime($request->input('endDate')):'';
 
 
-        dd($condition);
         $data['results'] = AccountModel::getAll($condition);
 
 
