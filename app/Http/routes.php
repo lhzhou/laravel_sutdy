@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/account' , 'Account\\AccountController@index');
 
     Route::get('/qrcode/generate' , 'Wechat\\QrcodeController@generate');
+    Route::get('/auditlog' , 'AuditLog\\AuditLogController@index');
 
 
 });

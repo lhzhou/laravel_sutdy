@@ -66,6 +66,20 @@ return [
             'engine' => null,
         ],
 
+        'audit_log' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_LOG', 'localhost'),
+            'port' => env('DB_PORT_LOG', '3306'),
+            'database' => env('DB_DATABASE_LOG', 'forge'),
+            'username' => env('DB_USERNAME_LOG', 'forge'),
+            'password' => env('DB_PASSWORD_LOG', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),

@@ -66,6 +66,13 @@
                 </ul>
 
             </li>
+
+            <li class="dropdown dropdown-large">
+                <a href="{{url('auditlog')}}" >日志管理 </a>
+
+
+
+            </li>
         </ul>
 
 
