@@ -13,14 +13,7 @@
                         <ul>
                             <li class="dropdown-header">账号管理</li>
                             <li><a href="{{url('account/')}}">账号列表</a></li>
-                            <li class="disabled"><a href="#">How to use</a></li>
-                            <li><a href="#">Examples</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Dropdowns</li>
-                            <li><a href="#">Example</a></li>
-                            <li><a href="#">Aligninment options</a></li>
-                            <li><a href="#">Headers</a></li>
-                            <li><a href="#">Disabled menu items</a></li>
+
                         </ul>
                     </li>
                     <li class="col-sm-3">
@@ -50,10 +43,10 @@
             </li>
 
             <li class="dropdown dropdown-large">
-                <a href="{{url('auditlog')}}" >日志管理 </a>
-
-
-
+                <a href="{{url('audit_log')}}" >日志管理</a>
+            </li>
+            <li class="dropdown dropdown-large">
+                <a href="{{url('api_code')}}" >API状态码</a>
             </li>
         </ul>
 
