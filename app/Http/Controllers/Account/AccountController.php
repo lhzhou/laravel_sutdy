@@ -34,6 +34,12 @@ class AccountController extends Controller
     }
 
 
+    public function show()
+    {
+        
+    }
+
+
 
 
 }
