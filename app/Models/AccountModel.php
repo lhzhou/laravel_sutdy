@@ -13,9 +13,6 @@ class AccountModel extends Model
 
     protected $dateFormat = 'U';
 
-    protected $casts = ['id' => 'string'];
-
-
 
 
     public static function getAll(array $condition =[])
@@ -45,19 +42,14 @@ class AccountModel extends Model
 
         if (!empty($condition['endDate']))
             $db = $db->where('subscribe_time' , '<' , $condition['endDate']);
-
-
-
+        
         $db = $db->paginate('50');
 
         return $db;
 
     }
 
-    public static function updateID($openId)
-    {
-       return self::where('openID' , $openId)->update(['id' => Uuid::uuid()]);
-    }
+
 
 
 }
